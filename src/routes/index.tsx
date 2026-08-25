@@ -59,7 +59,7 @@ function Home() {
 
         <section className="flex flex-1 items-center justify-center px-4 py-8 sm:py-10">
           <div key={college.id} className="animate-fade-in">
-            <NowPlaying tagline={taglines[taglineIdx]} collegeName={college.name} />
+            <NowPlaying tagline={taglines[taglineIdx]!} collegeName={college.name} />
           </div>
         </section>
 

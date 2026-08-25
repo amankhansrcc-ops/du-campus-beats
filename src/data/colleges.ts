@@ -40,4 +40,4 @@ export const colleges: College[] = [
   { id: "sscbs", name: "Shaheed Sukhdev College of Business Studies", short: "SSCBS", background: bgSrcc, tint: "220 60% 60%" },
 ];
 
-export const defaultCollege = colleges[0];
+export const defaultCollege = colleges[0]!;
