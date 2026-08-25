@@ -152,7 +152,7 @@ export const songs: Song[] = seeds.map(([title, artist, categoryId, duration, au
     categoryId,
     duration,
     audio: demo(audioIdx),
-    cover: g(p[0], p[1]),
+    cover: g(p[0]!, p[1]!),
   };
 });
 
