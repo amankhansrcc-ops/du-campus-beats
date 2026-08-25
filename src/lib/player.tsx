@@ -111,7 +111,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       if (!nextQueue.length) return;
       setQueue(nextQueue);
       setQueueName(name);
-      load(nextQueue[0]);
+      load(nextQueue[0]!);
     },
     [load],
   );
@@ -121,12 +121,12 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       if (!queue.length) return;
       if (shuffle && dir === 1) {
         const pick = queue[Math.floor(Math.random() * queue.length)];
-        load(pick);
+        if (pick) load(pick);
         return;
       }
       const idx = current ? queue.findIndex((s) => s.id === current.id) : -1;
       const nextIdx = (idx + dir + queue.length) % queue.length;
-      load(queue[nextIdx]);
+      load(queue[nextIdx]!);
     },
     [queue, current, shuffle, load],
   );
@@ -153,7 +153,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     const el = audioRef.current;
     if (!el) return;
     if (!current) {
-      load(queue[0] ?? songs[0]);
+      load(queue[0] ?? songs[0]!);
       return;
     }
     if (el.paused) {

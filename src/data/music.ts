@@ -144,7 +144,7 @@ const palettes = [
 ];
 
 export const songs: Song[] = seeds.map(([title, artist, categoryId, duration, audioIdx], i) => {
-  const p = palettes[i % palettes.length];
+  const p = palettes[i % palettes.length]!;
   return {
     id: `s${i + 1}`,
     title,
@@ -152,7 +152,7 @@ export const songs: Song[] = seeds.map(([title, artist, categoryId, duration, au
     categoryId,
     duration,
     audio: demo(audioIdx),
-    cover: g(p[0], p[1]),
+    cover: g(p[0]!, p[1]!),
   };
 });
 
