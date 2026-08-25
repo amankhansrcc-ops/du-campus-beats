@@ -1,7 +1,12 @@
 const BARS = 44;
 
-/** Decorative equalizer ring behind the artwork. Freezes when paused. */
-export function AudioVisualizer({ active }: { active: boolean }) {
+export function AudioVisualizer({
+  active,
+  loading,
+}: {
+  active: boolean;
+  loading?: boolean;
+}) {
   return (
     <div className="pointer-events-none absolute inset-0 flex items-end justify-center gap-[3px] px-1">
       {Array.from({ length: BARS }).map((_, i) => {
@@ -12,9 +17,15 @@ export function AudioVisualizer({ active }: { active: boolean }) {
             className="w-[2px] rounded-full bg-accent-soft"
             style={{
               height: `${8 + (1 - mid) * 46}%`,
-              opacity: active ? 0.25 + (1 - mid) * 0.55 : 0.12,
+              opacity: active
+                ? 0.25 + (1 - mid) * 0.55
+                : loading
+                ? 0.18 + (1 - mid) * 0.3
+                : 0.12,
               animation: active
                 ? `eq ${620 + (i % 7) * 130}ms ease-in-out ${i * 37}ms infinite alternate`
+                : loading
+                ? `wave-loading 1.2s ease-in-out ${i * 80}ms infinite`
                 : "none",
             }}
           />
