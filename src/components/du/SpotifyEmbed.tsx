@@ -121,12 +121,12 @@ export const SpotifyEmbed = forwardRef<SpotifyEmbedHandle, SpotifyEmbedEvents>(
             const repeatMode = features?.repeating_mode;
 
             onPlaybackUpdate?.({
-              track,
               isPaused,
               positionMs,
               durationMs,
-              shuffle,
-              repeatMode,
+              ...(track ? { track } : {}),
+              ...(typeof shuffle === "boolean" ? { shuffle } : {}),
+              ...(repeatMode !== undefined ? { repeatMode } : {}),
             });
 
             if (lastPaused !== null && isPaused !== lastPaused) {
