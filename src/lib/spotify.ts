@@ -1,5 +1,5 @@
-export const SPOTIFY_PLAYLIST_ID = "37i9dQZF1DX2Y6ZOyTJZfp";
-export const SPOTIFY_PLAYLIST_URL = `https://open.spotify.com/embed/playlist/${SPOTIFY_PLAYLIST_ID}?utm_source=generator`;
+export const SPOTIFY_PLAYLIST_ID = "6VKdUaa9BqQjLh0khDo3NX";
+export const SPOTIFY_PLAYLIST_URL = `https://open.spotify.com/embed/playlist/${SPOTIFY_PLAYLIST_ID}?utm_source=generator&si=13cd19d55ef441e2`;
 
 export type PlaybackState = {
   duration: number;
