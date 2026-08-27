@@ -74,6 +74,7 @@ function HomeShell() {
         </section>
 
         <div className="sticky bottom-0 z-30">
+          <SpotifyBar />
           <BottomNav onOpen={setPanel} collegeName={college.short} />
         </div>
       </main>
