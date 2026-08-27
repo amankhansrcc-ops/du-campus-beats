@@ -7,7 +7,7 @@ import { CollegePanel } from "@/components/du/CollegePanel";
 import { NowPlaying } from "@/components/du/NowPlaying";
 import { PlaylistPanel } from "@/components/du/PlaylistPanel";
 import { SearchPanel } from "@/components/du/SearchPanel";
-import { SpotifyPlayerPanel } from "@/components/du/SpotifyPlayerPanel";
+import { SpotifyBar } from "@/components/du/SpotifyBar";
 import { TopStatus } from "@/components/du/TopStatus";
 import { colleges, defaultCollege, type College } from "@/data/colleges";
 import { PlayerProvider } from "@/lib/player";
@@ -54,7 +54,7 @@ function HomeShell() {
     setTaglineIdx((i) => (i + 1) % taglines.length);
   };
 
-  const openSpotify = () => setPanel("spotify");
+  const openSpotify = () => setPanel("playlists");
 
   return (
     <>
